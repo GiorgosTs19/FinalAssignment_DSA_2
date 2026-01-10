@@ -12,9 +12,9 @@ def isPalindrome(word: str) -> bool:
 
 
 # Test
-print(isPalindrome("pop"))  # True
-print(isPalindrome("rotator"))    # True
-print(isPalindrome("a"))        # True
-print(isPalindrome(""))         # True
-print(isPalindrome("hello"))    # False
-print(isPalindrome("hello world"))    # False
+print(isPalindrome("pop")) # True
+print(isPalindrome("rotator")) # True
+print(isPalindrome("a")) # True
+print(isPalindrome("")) # True
+print(isPalindrome("hello")) # False
+print(isPalindrome("hello world")) # False
