@@ -11,7 +11,7 @@ def isPalindrome(word: str) -> bool:
     return isPalindrome(word[1:-1])
 
 
-# Test
+# Tests
 print(isPalindrome("pop")) # True
 print(isPalindrome("rotator")) # True
 print(isPalindrome("a")) # True
