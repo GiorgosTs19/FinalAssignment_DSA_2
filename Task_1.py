@@ -61,6 +61,34 @@ def nQueensLasVegas(size: int) -> tuple[bool, list[list[int]]]:
             return False, board
     return True, board
 
+def nQueensBacktracking(size:int) -> tuple[bool, list[list[int]]]:
+    board = [[0 for _ in range(size)] for _ in range(size)]
+    
+    def place_queen(current_board, row, board_length) :
+        # This is the base case, when this is true, it means every
+        # queen has been successfully placed.
+        if row == board_length:
+            return True
+        
+        # Attempt to place a queen in each column
+        for column in range(board_length):
+            if is_safe(current_board, row, column):
+                # If it's safe, place a queen in this position
+                current_board[row][column] = 1
+                
+                # If the next queen is placed, we recursively move to the next rows.
+                if place_queen(current_board, row + 1, board_length) :
+                    return True
+                
+                # If not, we need to backtrack.
+                current_board[row][column] = 0
+            
+        return False
+     
+    success = place_queen(board, 0, size)
+    
+    return success, board
+    
 # Need to ask the user to input the board size (it's a square board)
 board_size = input("Enter board size: ")
 while not board_size.isnumeric() or int(board_size) <= 3:
@@ -70,7 +98,10 @@ approach = input("Select an approach (1 -> Las Vegas, 2 -> Backtracking): ")
 while not approach == "1" and not approach == "2":
     approach = input("Select a valid approach (1 -> Las Vegas, 2 -> Backtracking): ")
 
-success, board = nQueensLasVegas(int(board_size))
+if approach == "1":
+    success, board = nQueensLasVegas(int(board_size))
+elif approach == "2":
+    success, board = nQueensBacktracking(int(board_size))
 
 print(f"Success: {success}")
 printBoard(board)
@@ -85,4 +116,4 @@ def calculate_success_rate(times:int) -> float:
     
     return successful_tries / times
 
-print(calculate_success_rate(10000))
+# print(calculate_success_rate(10000))
