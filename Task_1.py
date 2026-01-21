@@ -63,7 +63,7 @@ def nQueensLasVegas(size: int) -> tuple[bool, list[list[int]]]:
     return True, initialized_board
 
 def nQueensBacktracking(size:int) -> tuple[bool, list[list[int]]]:
-    board = [[0 for _ in range(size)] for _ in range(size)]
+    initialized_board = [[0 for _ in range(size)] for _ in range(size)]
     
     def place_queen(current_board, row) :
         # This is the base case, when this is true, it means every
@@ -86,9 +86,9 @@ def nQueensBacktracking(size:int) -> tuple[bool, list[list[int]]]:
             
         return False
      
-    queens_placed_successfully = place_queen(board, 0)
+    queens_placed_successfully = place_queen(initialized_board, 0)
     
-    return queens_placed_successfully, board
+    return queens_placed_successfully, initialized_board
 
 
 

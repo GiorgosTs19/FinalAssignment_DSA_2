@@ -9,7 +9,8 @@ def MyMinimumSpannigTree(Graph: nx.Graph) -> nx.Graph:
     visited_nodes.add(starting_node)
     mst.add_node(starting_node)
     print(f"Starting node: {starting_node}")
-    # The ending condition is edges = nodes - 1.
+    # The algorithm end when all nodes have been visited,
+    # which implies that the MST contains n − 1 edges.
     while len(visited_nodes) < len(Graph.nodes):
         smallest_edge = None
         
@@ -153,9 +154,9 @@ G2.add_edge("C", "B", weight=4)
 
 G2.add_edge("D", "E", weight=15)
 
-draw_graph_and_mst(G2, 1, "Graph 2")
+# draw_graph_and_mst(G2, 1, "Graph 2")
 
-print('\n')
+# print('\n')
 
 # ---------------------------------------- Graph 3 ----------------------------------------
 G3 = nx.Graph()
@@ -190,6 +191,6 @@ G3.add_edge("D", "E", weight=24)
 
 G3.add_edge("E", "F", weight=34)
 
-draw_graph_and_mst(G3, 2, "Graph 3")
+# draw_graph_and_mst(G3, 2, "Graph 3")
 
 mp.show()
