@@ -12,8 +12,7 @@ def MyMinimumSpannigTree(Graph: nx.Graph) -> nx.Graph:
     # The ending condition is edges = nodes - 1.
     while len(visited_nodes) < len(Graph.nodes):
         smallest_edge = None
-        visited_node = None
-        unvisited_node = None
+        
         for edge in Graph.edges(data=True) :
            node1, node2, data = edge
            # Using a xor, we first check whether the edge is valid
