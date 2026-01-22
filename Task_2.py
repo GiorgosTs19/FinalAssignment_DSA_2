@@ -154,9 +154,9 @@ G2.add_edge("C", "B", weight=4)
 
 G2.add_edge("D", "E", weight=15)
 
-# draw_graph_and_mst(G2, 1, "Graph 2")
+draw_graph_and_mst(G2, 1, "Graph 2")
 
-# print('\n')
+print('\n')
 
 # ---------------------------------------- Graph 3 ----------------------------------------
 G3 = nx.Graph()
@@ -191,6 +191,6 @@ G3.add_edge("D", "E", weight=24)
 
 G3.add_edge("E", "F", weight=34)
 
-# draw_graph_and_mst(G3, 2, "Graph 3")
+draw_graph_and_mst(G3, 2, "Graph 3")
 
 mp.show()
